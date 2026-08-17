@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/storageFlags",
+    "value": 261,
+    "file": "game:itemtypes/resource/crystalizedore-graded.json"
+  }
+]

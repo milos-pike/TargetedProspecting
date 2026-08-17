@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "targetedprospecting.prospectingpick",
+    "file": "game:itemtypes/tool/prospectingpick.json"
+  }
+]

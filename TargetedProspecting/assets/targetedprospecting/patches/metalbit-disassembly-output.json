@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "targetedprospecting.disassemblyoutput"
+    },
+    "file": "game:itemtypes/resource/metalbit.json"
+  }
+]

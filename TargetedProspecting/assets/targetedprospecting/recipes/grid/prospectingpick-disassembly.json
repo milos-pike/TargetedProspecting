@@ -1,0 +1,50 @@
+{
+  "shapeless": true,
+  "ingredientPattern": "PS,HC",
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:prospectingpick-*",
+      "name": "metal",
+      "allowedVariants": [
+        "copper",
+        "tinbronze",
+        "bismuthbronze",
+        "blackbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    },
+    "S": {
+      "type": "item",
+      "tags": ["tool-saw"],
+      "isTool": true,
+      "toolDurabilityCost": 0
+    },
+    "H": {
+      "type": "item",
+      "tags": ["tool-hammer"],
+      "isTool": true,
+      "toolDurabilityCost": 0
+    },
+    "C": {
+      "type": "item",
+      "tags": ["tool-chisel"],
+      "isTool": true,
+      "toolDurabilityCost": 0
+    }
+  },
+  "width": 2,
+  "height": 2,
+  "averageDurability": false,
+  "recipeGroup": 9001,
+  "attributes": {
+    "targetedProspectingDisassembly": true
+  },
+  "output": {
+    "type": "item",
+    "code": "game:metalbit-{metal}",
+    "quantity": 20
+  }
+}

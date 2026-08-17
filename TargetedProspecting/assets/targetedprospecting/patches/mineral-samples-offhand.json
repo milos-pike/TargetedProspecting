@@ -1,0 +1,40 @@
+[
+  {
+    "op": "remove",
+    "path": "/storageFlags",
+    "file": "game:itemtypes/resource/ore-ungraded.json"
+  },
+  {
+    "op": "add",
+    "path": "/storageFlagsByType",
+    "value": {
+      "ore-alum": 261,
+      "ore-lapislazuli": 261,
+      "ore-anthracite": 261,
+      "ore-borax": 261,
+      "ore-cinnabar": 261,
+      "ore-lignite": 261,
+      "ore-bituminouscoal": 261,
+      "ore-sylvite": 261,
+      "ore-quartz": 261,
+      "ore-olivine": 261,
+      "ore-sulfur": 261,
+      "*": 5
+    },
+    "file": "game:itemtypes/resource/ore-ungraded.json"
+  },
+  {
+    "op": "remove",
+    "path": "/storageFlags",
+    "file": "game:itemtypes/resource/stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/storageFlagsByType",
+    "value": {
+      "stone-halite": 261,
+      "*": 5
+    },
+    "file": "game:itemtypes/resource/stone.json"
+  }
+]
