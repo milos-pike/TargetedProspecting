@@ -9,7 +9,7 @@
     "M. Pike jr. (Mathi_bubble)"
   ],
   "description": "Adds a new prospecting pick mode that uses a sample to find nearby deposits of the same mineral.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "website": "https://github.com/milos-pike/TargetedProspecting",
   "side": "Universal",
   "dependencies": {

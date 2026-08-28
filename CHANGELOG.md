@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 - 2026-08-28
+
+### Changed
+
+- Improved diagnostic log filenames to include the Vintage Story version and local language, or SERVER on dedicated servers.
+
 ## 1.0.0 - 2026-08-17
 
 Initial public release of Targeted Prospecting.
