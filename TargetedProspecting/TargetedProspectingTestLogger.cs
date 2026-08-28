@@ -153,7 +153,9 @@ namespace TargetedProspecting
             }
         }
 
-        internal static bool StartSession()
+        internal static bool StartSession(
+            string? languageCode
+        )
         {
             Exception? startException = null;
             bool started = false;
@@ -178,7 +180,9 @@ namespace TargetedProspecting
                 try
                 {
                     CreateSessionLog(
-                        DateTimeOffset.Now
+                        DateTimeOffset.Now,
+                        api,
+                        languageCode
                     );
 
                     Enabled = true;
@@ -211,7 +215,9 @@ namespace TargetedProspecting
         }
 
         private static void CreateSessionLog(
-            DateTimeOffset sessionStartedAt
+            DateTimeOffset sessionStartedAt,
+            ICoreServerAPI api,
+            string? languageCode
         )
         {
             string logDirectoryPath =
@@ -224,6 +230,36 @@ namespace TargetedProspecting
                 logDirectoryPath
             );
 
+            string runtimeGameVersion =
+                typeof(GameVersion)
+                    .GetField(nameof(GameVersion.ShortGameVersion))
+                    ?.GetRawConstantValue()
+                    ?.ToString()
+                ?? GameVersion.ShortGameVersion;
+
+            string logContext;
+
+            if (api.Server.IsDedicated)
+            {
+                logContext = "SERVER";
+            }
+            else if (string.IsNullOrWhiteSpace(languageCode))
+            {
+                logContext = "UNKNOWN";
+            }
+            else
+            {
+                logContext =
+                    languageCode
+                        .Trim()
+                        .ToUpperInvariant();
+
+                if (logContext == "CS")
+                {
+                    logContext = "CZ";
+                }
+            }
+
             DateTimeOffset logFileTimestamp =
                 sessionStartedAt;
 
@@ -231,7 +267,11 @@ namespace TargetedProspecting
             {
                 string logFileName =
                     string.Concat(
-                        "targetedprospecting-",
+                        "VS-",
+                        runtimeGameVersion,
+                        "-",
+                        logContext,
+                        "-targetedprospecting-",
                         logFileTimestamp.ToString(
                             "yyyyMMdd-HHmmss",
                             CultureInfo.InvariantCulture

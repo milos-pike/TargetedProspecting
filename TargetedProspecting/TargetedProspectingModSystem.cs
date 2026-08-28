@@ -119,7 +119,9 @@ namespace TargetedProspecting
                 );
             }
 
-            if (!TargetedProspectingTestLogger.StartSession())
+            if (!TargetedProspectingTestLogger.StartSession(
+                args.LanguageCode
+            ))
             {
                 return TextCommandResult.Error(
                     Lang.GetL(
